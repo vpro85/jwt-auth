@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken')
 const Process = require("process");
 const tokenModel = require('../models/token-model')
 
-
 class TokenService {
     generateTokens(payload) {
         const accessToken = jwt.sign(payload, Process.env.JWT_ACCESS_SECRET, {expiresIn: '30m'})
